@@ -1,64 +1,137 @@
 using president.valueObjects;
 using president.valueObjects.identifier;
 
-
 namespace president.entity
 {
     public class Room
     {
         private readonly RoomId roomId;
-        private PlayerId ownerId;
+        private Player owner;
         private readonly RoomLink roomLink;
         private AccessConfig accessConfig;
-
-        private List<PlayerId> players;
+        private List<Player> players;
+        private List<PlayerId> playersToChoice;
+        private List<Card> cardsToChoice;
+        private Status status;
 
         private Room(
             RoomId roomId,
-            PlayerId ownerId,
+            Player owner,
             RoomLink roomLink,
             AccessConfig accessConfig,
-            List<PlayerId> players)
+            List<Player> players)
         {
             this.roomId = roomId;
-            this.ownerId = ownerId;
+            this.owner = owner;
             this.roomLink = roomLink;
             this.accessConfig = accessConfig;
             this.players = players;
+            this.cardsToChoice = new List<Card>();
+
+            this.playersToChoice = new List<PlayerId>(
+                players.Select(x => x.PlayerId)
+            );
+
+            this.status = Status.WAITING;
         }
 
-        public static Room of(PlayerId ownerId, AccessConfig accessConfig)
+        public void ToSorting() {
+            if (status != Status.WAITING){
+                throw new Exception("Room is not waiting");
+            }
+
+            ShuffleCardsToChoice();
+            this.status = Status.IN_SORTING;
+
+        }
+        
+        private void ShuffleCardsToChoice()
+        {
+            if(players.Count() < accessConfig.MinPlayers)
+            {
+                throw new Exception("'min players' can't be less than four!");
+            }
+
+            foreach(CardValue cardValue in CardValueMethods.Values()){
+                cardsToChoice.Add(Card.of(cardValue, Suit.CLUBS));
+            }
+
+            cardsToChoice = cardsToChoice.OrderBy(a => Guid.NewGuid()).ToList();
+        }
+
+        public static Room of(Player owner, AccessConfig accessConfig)
         {
             var roomId = RoomId.of();
             var roomLink = RoomLink.of();
-            var players = new List<PlayerId>();
-            players.Add(ownerId);
+            var players = new List<Player>();
+            players.Add(owner);
 
             return new Room(
                 roomId,
-                ownerId,
+                owner,
                 roomLink,
                 accessConfig,
                 players
             );
         }
-        public void AddPlayer(PlayerId playerId)
+
+        public Card ChoiceCard(Player player) {
+
+            if (status != Status.IN_SORTING) {
+                throw new Exception("Room is not in sorting");
+            }
+
+            if (!playersToChoice.Contains(player.PlayerId))
+            {
+                throw new Exception("Can't choice card for player " + player.PlayerId.Value);
+            }
+
+            var card = cardsToChoice!.ElementAt(0);
+            player.ChoiceCard(card);
+            cardsToChoice.Remove(card);
+            playersToChoice.Remove(player.PlayerId);
+
+            if (playersToChoice.Count == 0) {
+                ToInGame();
+            }
+
+            return card;
+        }
+
+        public void SortPlayers()
+        {
+            players.Sort((x, y) => y.ChoicedCard!.CardValue.CompareTo(x.ChoicedCard!.CardValue));
+        }
+
+        public void ToInGame() {
+
+            if (status != Status.IN_SORTING && status != Status.ROUND_FINISHED) {
+                throw new Exception("Room is not in sorting or round finished");
+            }
+
+            status = Status.IN_GAME;
+
+        }
+
+
+        public void AddPlayer(Player player)
         {
             if (players.Count() >= accessConfig.MaxPlayers) {
                 throw new Exception("This room is full!");
             }
 
-            this.players.Add(playerId);
+            this.players.Add(player);
+            this.playersToChoice.Add(player.PlayerId);
         }
 
         public RoomId RoomId
         {
-            get { return this.roomId; }
+            get { return roomId; }
         }
 
-        public PlayerId OwnerId
+        public Player Owner
         {
-            get { return ownerId; }
+            get { return owner; }
         }
         
         public RoomLink RoomLink 
@@ -71,14 +144,10 @@ namespace president.entity
             get { return accessConfig; }
         }
 
-        public List<PlayerId> Players 
+        public List<Player> Players 
         {
             get { return players; }
         }
 
-        public enum status
-        {
-            IN_LOBBY, SORTING, READY, ROUND, ROUND_FINISHED, FINISHED
-        }
     }
 }

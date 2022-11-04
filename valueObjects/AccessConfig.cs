@@ -2,49 +2,46 @@ namespace president.valueObjects
 {
     public class AccessConfig : IValueObject
     {
-        private readonly int minPlayers;
+        private readonly static int MIN_PLAYERS = 4;
         private readonly int maxPlayers;
         private readonly int timeOfNextPlayer;
         private readonly Visibility visibility;
 
         private AccessConfig(
-            int minPlayers,
             int maxPlayers, 
             int timeOfNextPlayer,
             Visibility visibility)
         {
-            this.minPlayers = minPlayers;
             this.maxPlayers = maxPlayers;
             this.timeOfNextPlayer = timeOfNextPlayer;
             this.visibility = visibility;
         }
 
-        public static AccessConfig of(
-            int minPlayers,
+        public static AccessConfig ofPublic(
             int maxPlayers)
         {
             return AccessConfig.of(
-                minPlayers,
                 maxPlayers,
                 Visibility.PUBLIC);
         }
 
+        public static AccessConfig ofPrivate(
+            int maxPlayers) {
+
+        return AccessConfig.of(
+                maxPlayers,
+                Visibility.PRIVATE
+        );
+    }
+
         public static AccessConfig of(
-            int minPlayers,
             int maxPlayers,
             Visibility visibility)
         {
-                if(minPlayers < 4)
+                if(maxPlayers < AccessConfig.MIN_PLAYERS)
                 {
                     throw new Exception(
-                        "'min players' can't be less than 4"
-                    );
-                }
-
-                if(minPlayers > 13)
-                {
-                    throw new Exception(
-                        "'min players' can't be greater than 13"
+                        "'max players' can't be less than 4"
                     );
                 }
 
@@ -55,15 +52,7 @@ namespace president.valueObjects
                     );
                 }
 
-                if(maxPlayers < minPlayers)
-                {
-                    throw new Exception(
-                        "'max players' can't be less than " + minPlayers
-                    );                    
-                }
-
             return new AccessConfig(
-                minPlayers,
                 maxPlayers,
                 15,
                 visibility
@@ -73,7 +62,7 @@ namespace president.valueObjects
 
         public int MinPlayers
         {
-            get{ return minPlayers; }
+            get{ return MIN_PLAYERS; }
         }
 
         public int MaxPlayers

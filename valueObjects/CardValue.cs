@@ -1,6 +1,6 @@
 namespace president.valueObjects
 {
-    public enum CardValue 
+    public enum CardValue
     {
         ACE = 12,
         TWO = 13,
@@ -15,5 +15,19 @@ namespace president.valueObjects
         JACK = 9,
         QUEEN = 10,
         KING = 11
+    }
+
+    public static class CardValueMethods
+    {
+        public static int Value(this CardValue c)
+        {
+            return (int)c;
+        }
+
+        public static Array Values()
+        {
+            return Enum.GetValues(typeof(CardValue));
+        }
+
     }
 }

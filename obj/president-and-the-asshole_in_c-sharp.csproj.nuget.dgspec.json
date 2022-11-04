@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\enio\\Desktop\\workspace\\president\\president-and-the-asshole_in_c-sharp.csproj": {}
+    "C:\\Users\\enio\\Desktop\\workspace\\c-sharp-projects\\president_and_asshole\\president-and-the-asshole_in_c-sharp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\enio\\Desktop\\workspace\\president\\president-and-the-asshole_in_c-sharp.csproj": {
+    "C:\\Users\\enio\\Desktop\\workspace\\c-sharp-projects\\president_and_asshole\\president-and-the-asshole_in_c-sharp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\enio\\Desktop\\workspace\\president\\president-and-the-asshole_in_c-sharp.csproj",
+        "projectUniqueName": "C:\\Users\\enio\\Desktop\\workspace\\c-sharp-projects\\president_and_asshole\\president-and-the-asshole_in_c-sharp.csproj",
         "projectName": "president-and-the-asshole_in_c-sharp",
-        "projectPath": "C:\\Users\\enio\\Desktop\\workspace\\president\\president-and-the-asshole_in_c-sharp.csproj",
+        "projectPath": "C:\\Users\\enio\\Desktop\\workspace\\c-sharp-projects\\president_and_asshole\\president-and-the-asshole_in_c-sharp.csproj",
         "packagesPath": "C:\\Users\\enio\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\enio\\Desktop\\workspace\\president\\obj\\",
+        "outputPath": "C:\\Users\\enio\\Desktop\\workspace\\c-sharp-projects\\president_and_asshole\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\enio\\AppData\\Roaming\\NuGet\\NuGet.Config",

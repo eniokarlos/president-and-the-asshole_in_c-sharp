@@ -1,7 +1,6 @@
 ﻿using president.entity;
 using president.valueObjects;
 using president.valueObjects.identifier;
-using System.Linq;
 
 namespace president
 {
@@ -9,44 +8,37 @@ namespace president
     {
         static void Main(String[] args)
         {
-            var room = Room.of(PlayerId.of(), AccessConfig.of(5, 9));
-            room.AddPlayer(PlayerId.of());
-            room.AddPlayer(PlayerId.of());
-            room.AddPlayer(PlayerId.of());
-            room.AddPlayer(PlayerId.of());
+            var p1 = Player.of("Enio");
+            var p2 = Player.of("Mel");
+            var p3 = Player.of("Lara");
+            var p4 = Player.of("Feericle");
 
-            var cardsValues = Enum.GetValues<CardValue>();
-            var cardsClub = new List<Card>();
+            var room = Room.of(p1, AccessConfig.ofPrivate(4));
 
-            foreach(var cardValue in cardsValues){
-                cardsClub.Add(Card.of(cardValue, Suit.CLUBS));
-            }
-            
-            ShuffleCards(ref cardsClub);
-            
-            var p1 = cardsClub[12];
-            var p2 = cardsClub[11];
+            room.AddPlayer(p2);
+            room.AddPlayer(p3);
+            room.AddPlayer(p4);
 
-            System.Console.WriteLine(p1.GetCardValue());
-            System.Console.WriteLine(p2.GetCardValue());
+            room.ToSorting();
+
+            room.ChoiceCard(p1);
+            room.ChoiceCard(p2);
+            room.ChoiceCard(p3);
+            room.ChoiceCard(p4);
+
+            room.SortPlayers();
 
             print(room);
             
         }
-
-        public static void ShuffleCards(ref List<Card> l)
-        {
-
-            l = l.OrderBy( x => Guid.NewGuid()).ToList();
-        }
-
         public static void print(Room room)
         {
-            System.Console.WriteLine("Room id: " + room.RoomId.GetValue());
-            System.Console.WriteLine("Owner id: " + room.OwnerId.GetValue());
+            System.Console.WriteLine("Room id: " + room.RoomId.Value);
+            System.Console.WriteLine("Owner id: " + room.Owner.NickName);
             room.Players.ForEach(p =>
             {
-                System.Console.WriteLine("Players: " + p.GetValue());
+                System.Console.WriteLine("Players: " + p.NickName);
+                System.Console.WriteLine("Chosen Card:" + p.ChoicedCard!.CardValue);
             });
             System.Console.WriteLine("Link value: " + room.RoomLink.GetValue());
             System.Console.WriteLine("Min players: " + room.AccessConfig.MinPlayers);

@@ -21,18 +21,18 @@ namespace president.entity
             return new Card(CardId.of(), cardValue, suit);
         }
 
-        public CardId GetCardId(){
-            return cardId;
+        public CardId CardId{
+            get { return cardId; }
         }
-
-        public CardValue GetCardValue()
+        
+        public CardValue CardValue
         {
-            return cardValue;
+            get { return cardValue; }
         }
-
-        public Suit GetSuit()
+        
+        public Suit Suit
         {
-            return suit;
+            get { return suit; }
         }
     }
 }
