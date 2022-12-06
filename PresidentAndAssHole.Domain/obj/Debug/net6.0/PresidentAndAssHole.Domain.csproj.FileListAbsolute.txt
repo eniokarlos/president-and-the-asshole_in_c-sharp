@@ -1,0 +1,12 @@
+C:\Users\enio\Desktop\President_and_Asshole\PresidentAndAssHole.Domain\bin\Debug\net6.0\PresidentAndAssHole.Domain.deps.json
+C:\Users\enio\Desktop\President_and_Asshole\PresidentAndAssHole.Domain\bin\Debug\net6.0\PresidentAndAssHole.Domain.dll
+C:\Users\enio\Desktop\President_and_Asshole\PresidentAndAssHole.Domain\bin\Debug\net6.0\PresidentAndAssHole.Domain.pdb
+C:\Users\enio\Desktop\President_and_Asshole\PresidentAndAssHole.Domain\obj\Debug\net6.0\PresidentAndAssHole.Domain.csproj.AssemblyReference.cache
+C:\Users\enio\Desktop\President_and_Asshole\PresidentAndAssHole.Domain\obj\Debug\net6.0\PresidentAndAssHole.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\enio\Desktop\President_and_Asshole\PresidentAndAssHole.Domain\obj\Debug\net6.0\PresidentAndAssHole.Domain.AssemblyInfoInputs.cache
+C:\Users\enio\Desktop\President_and_Asshole\PresidentAndAssHole.Domain\obj\Debug\net6.0\PresidentAndAssHole.Domain.AssemblyInfo.cs
+C:\Users\enio\Desktop\President_and_Asshole\PresidentAndAssHole.Domain\obj\Debug\net6.0\PresidentAndAssHole.Domain.csproj.CoreCompileInputs.cache
+C:\Users\enio\Desktop\President_and_Asshole\PresidentAndAssHole.Domain\obj\Debug\net6.0\PresidentAndAssHole.Domain.dll
+C:\Users\enio\Desktop\President_and_Asshole\PresidentAndAssHole.Domain\obj\Debug\net6.0\refint\PresidentAndAssHole.Domain.dll
+C:\Users\enio\Desktop\President_and_Asshole\PresidentAndAssHole.Domain\obj\Debug\net6.0\PresidentAndAssHole.Domain.pdb
+C:\Users\enio\Desktop\President_and_Asshole\PresidentAndAssHole.Domain\obj\Debug\net6.0\ref\PresidentAndAssHole.Domain.dll

@@ -1,0 +1,17 @@
+C:\Users\enio\Desktop\President_and_Asshole\PresidentAndAssHole.Infraestructure\obj\Debug\net6.0\PresidentAndAssHole.Infraestructure.csproj.AssemblyReference.cache
+C:\Users\enio\Desktop\President_and_Asshole\PresidentAndAssHole.Infraestructure\obj\Debug\net6.0\PresidentAndAssHole.Infraestructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\enio\Desktop\President_and_Asshole\PresidentAndAssHole.Infraestructure\obj\Debug\net6.0\PresidentAndAssHole.Infraestructure.AssemblyInfoInputs.cache
+C:\Users\enio\Desktop\President_and_Asshole\PresidentAndAssHole.Infraestructure\obj\Debug\net6.0\PresidentAndAssHole.Infraestructure.AssemblyInfo.cs
+C:\Users\enio\Desktop\President_and_Asshole\PresidentAndAssHole.Infraestructure\obj\Debug\net6.0\PresidentAndAssHole.Infraestructure.csproj.CoreCompileInputs.cache
+C:\Users\enio\Desktop\President_and_Asshole\PresidentAndAssHole.Infraestructure\bin\Debug\net6.0\PresidentAndAssHole.Infraestructure.deps.json
+C:\Users\enio\Desktop\President_and_Asshole\PresidentAndAssHole.Infraestructure\bin\Debug\net6.0\PresidentAndAssHole.Infraestructure.runtimeconfig.json
+C:\Users\enio\Desktop\President_and_Asshole\PresidentAndAssHole.Infraestructure\bin\Debug\net6.0\PresidentAndAssHole.Infraestructure.dll
+C:\Users\enio\Desktop\President_and_Asshole\PresidentAndAssHole.Infraestructure\bin\Debug\net6.0\PresidentAndAssHole.Infraestructure.pdb
+C:\Users\enio\Desktop\President_and_Asshole\PresidentAndAssHole.Infraestructure\bin\Debug\net6.0\PresidentAndAssHole.Domain.dll
+C:\Users\enio\Desktop\President_and_Asshole\PresidentAndAssHole.Infraestructure\bin\Debug\net6.0\PresidentAndAssHole.Domain.pdb
+C:\Users\enio\Desktop\President_and_Asshole\PresidentAndAssHole.Infraestructure\obj\Debug\net6.0\PresidentAndAssHole.Infraestructure.csproj.CopyComplete
+C:\Users\enio\Desktop\President_and_Asshole\PresidentAndAssHole.Infraestructure\obj\Debug\net6.0\PresidentAndAssHole.Infraestructure.dll
+C:\Users\enio\Desktop\President_and_Asshole\PresidentAndAssHole.Infraestructure\obj\Debug\net6.0\refint\PresidentAndAssHole.Infraestructure.dll
+C:\Users\enio\Desktop\President_and_Asshole\PresidentAndAssHole.Infraestructure\obj\Debug\net6.0\PresidentAndAssHole.Infraestructure.pdb
+C:\Users\enio\Desktop\President_and_Asshole\PresidentAndAssHole.Infraestructure\obj\Debug\net6.0\PresidentAndAssHole.Infraestructure.genruntimeconfig.cache
+C:\Users\enio\Desktop\President_and_Asshole\PresidentAndAssHole.Infraestructure\obj\Debug\net6.0\ref\PresidentAndAssHole.Infraestructure.dll
